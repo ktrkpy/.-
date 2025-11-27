@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไก่ตันราคาถูก - เว็บสุ่มของ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ไก่ตันราคาถูก</h1>
+            <div id="user-section">
+                <div id="login-form" class="hidden">
+                    <input type="text" id="username" placeholder="ชื่อผู้ใช้">
+                    <input type="password" id="password" placeholder="รหัสผ่าน">
+                    <button id="login-btn">เข้าสู่ระบบ</button>
+                    <button id="register-btn">สมัครสมาชิก</button>
+                </div>
+                <div id="user-info" class="hidden">
+                    <span id="welcome-msg">ยินดีต้อนรับ, <span id="display-username"></span></span>
+                    <span id="balance">ยอดเงิน: <span id="balance-amount">0</span>฿</span>
+                    <button id="logout-btn">ออกจากระบบ</button>
+                    <button id="topup-btn">เติมเงิน</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="random-items">
+                <div class="item-card">
+                    <h2>สุ่มไอดี 1฿</h2>
+                    <p>ราคา: 1฿</p>
+                    <button class="buy-btn" data-price="1" data-type="id1">ซื้อ</button>
+                </div>
+                <div class="item-card">
+                    <h2>สุ่มไอดีไม่มีเกลือ</h2>
+                    <p>ราคา: 50฿</p>
+                    <button class="buy-btn" data-price="50" data-type="id2">ซื้อ</button>
+                </div>
+            </section>
+
+            <section id="result-section" class="hidden">
+                <h2>ผลการสุ่ม</h2>
+                <div id="result-content"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal สำหรับเติมเงิน -->
+    <div id="topup-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>เติมเงิน</h2>
+            <input type="text" id="topup-code" placeholder="กรอกรหัสเติมเงิน">
+            <button id="submit-topup">ยืนยัน</button>
+        </div>
+    </div>
+
+    <!-- Modal สำหรับสมัครสมาชิก -->
+    <div id="register-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>สมัครสมาชิก</h2>
+            <input type="text" id="reg-username" placeholder="ชื่อผู้ใช้">
+            <input type="password" id="reg-password" placeholder="รหัสผ่าน">
+            <button id="submit-register">สมัครสมาชิก</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
